@@ -3,6 +3,7 @@ const HomePage = () => {
         <div className='main-content'>
             Hello world something new
         </div>
+
     );
 }
 
