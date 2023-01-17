@@ -4,10 +4,12 @@ import { PageHeader } from "../../components/header/page-header.component";
 import './navigation.style.scss';
 
 const Navigation = () => {
+    const showPageHeader: boolean = false;
+
     return (
         <div className="page">
             <HeaderMenu />
-            <PageHeader />
+            {showPageHeader && <PageHeader />}
 
             <div className="main-container">
                 <Outlet />
