@@ -9,9 +9,9 @@
 :root {
   --clr-white: #FFFFFF;
   --clr-secondary: #F6F7F9;
-  --clr-light-gray: #d6d6d6;
+  --clr-light-gray: #eceef2;
   --clr-dark-gray: #7b7e80;
-  --clr-alert: #cfdefc50;
+  --clr-alert: #eceef2;
 }
 
 .page {

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { SimpleAlert } from "../../components/forms/simple-alert/simple-alert.component";
+import { Spinner } from "../../components/forms/spinner/spinner.component";
 import { TextInput } from "../../components/forms/text-input/text-input.component";
 import './login-page.style.scss';
 
@@ -16,8 +18,7 @@ const LoginPage = () => {
     const onChangeHandler = (value: string, id: string) => {
         setUser({...user, [id]: value});
     }
-
-    console.log('lena-dev', user);     
+   
     return (
         <div className="login-page">
             <h1>Login</h1>
