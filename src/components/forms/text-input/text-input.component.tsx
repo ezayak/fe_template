@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState, FC } from 'react';
 import './text-input.style.scss';
 
 interface ITextInputProps {
@@ -11,7 +11,7 @@ interface ITextInputProps {
     onChange?: (value: string, id: string) => void
 }
 
-const TextInput = ({
+const TextInput: FC<ITextInputProps> = ({
     id,
     label,
     placeholder,

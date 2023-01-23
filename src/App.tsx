@@ -1,10 +1,11 @@
 import './App.css';
+import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './routes/home-page/home-page.component';
 import { LoginPage } from './routes/login-page/login-page.component';
 import { Navigation } from './routes/navigation/navigation';
 
-function App() {
+const App: FC = () => {
   return (
     <Routes>
         <Route path='/' element={<Navigation />}>

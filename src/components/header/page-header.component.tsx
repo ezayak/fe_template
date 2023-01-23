@@ -1,6 +1,7 @@
 import './header.style.scss';
+import { FC } from 'react';
 
-const PageHeader = () => {
+const PageHeader:FC = () => {
     return (
         <div className='page-header-container'>
             <div className='page-header'>

@@ -1,18 +1,27 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import './simple-alert.style.scss';
 
 interface IAlertProps {
-    alert_type?: string,
+    alertClass?: string,
     onClose?: () => void,
-    children: JSX.Element
+    visible?: boolean,
+    children: JSX.Element,
 }
 
-const SimpleAlert : FC<IAlertProps> = ({
-    alert_type,
+const SimpleAlert: FC<IAlertProps> = ({
+    alertClass,
     onClose,
-    children
+    visible,
+    children,
 }) => {
-    const [visible, setVisibility] = useState(true);
+    const [visibleState, setVisibility] = useState(true);
+    
+    useEffect(() => {
+        if (visible !== undefined) {
+            setVisibility(visible);
+        }
+
+    }, [visible]);
 
     const closeAlert = () => {
         setVisibility(false);
@@ -20,14 +29,14 @@ const SimpleAlert : FC<IAlertProps> = ({
         if (onClose) onClose();
     }
 
-    if (!visible) {
+    if (!visibleState) {
         return (
             <></>
         );
     }
 
     return (
-        <div className="alert-container">
+        <div className={`alert-container ${alertClass}`} >
             {children}
             <button className="alert-close-button" onClick={closeAlert}></button>
         </div>

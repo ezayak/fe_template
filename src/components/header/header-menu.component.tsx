@@ -1,9 +1,10 @@
 import './header.style.scss';
+import { FC } from 'react';
 import { IconContext } from 'react-icons';
 import { CgLogIn, CgLogOut } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 
-const HeaderMenu = () => {
+const HeaderMenu: FC = () => {
     const user: boolean = false;
 
     const onLogout = () => {
