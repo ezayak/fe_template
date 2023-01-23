@@ -45,6 +45,12 @@ $alert-warning-color: #fdd3cee1;
 
     &.warning {
         background-color:$alert-warning-color;
-        border-color: $alert-warning-color;
+        border-color: $alert-warning-color;      
     }
+
+
+    .alert-close-button {
+      background-color: transparent;
+      border-color: transparent;
+    }  
 }
