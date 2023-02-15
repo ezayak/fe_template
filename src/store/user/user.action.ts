@@ -1,8 +1,7 @@
 import { ThunkAction } from 'redux-thunk';
 import { RootState } from '..';
-
 import { SignInData, AuthAction, USER_ACTION_TYPES } from './user.types';
-//import firebase from '../../utils/firebase/firebase';
+
 
 // Set loading
 export const setLoading = (value: boolean): ThunkAction<void, RootState, null, AuthAction> => {
@@ -33,5 +32,14 @@ export const seterror = (msg: string): ThunkAction<void, RootState, null, AuthAc
             type: USER_ACTION_TYPES.SET_ERROR,
             payload: msg
         })
+    }
+}
+
+export const getUserDataByLogin = (id: string): ThunkAction<void, RootState, null, AuthAction> => {
+    return async dispatch => {
+        dispatch({
+            type: USER_ACTION_TYPES.SET_USER,
+            payload: id            
+        });
     }
 }

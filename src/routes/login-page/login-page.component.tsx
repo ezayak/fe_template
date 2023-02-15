@@ -5,6 +5,9 @@ import { Spinner } from "../../components/forms/spinner/spinner.component";
 import { TextInput } from "../../components/forms/text-input/text-input.component";
 import firebase from '../../utils/firebase/firebase';
 import { ERROR_MESSAGES, errorMessages } from '../../utils/common/error-message.utils';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../store';
+import { getUserDataByLogin } from '../../store/user/user.action';
 
 interface ConfirmationResult {
     confirm: (password: string) => Promise<string>
@@ -24,6 +27,7 @@ const LoginPage: FC = () => {
     const [message, setMessage] = useState('');
     const [alertClass, setAlertClass] = useState('');
     const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult>();
+    const dispatch = useDispatch<AppDispatch>();
 
     const onChangeHandler = (value: string, id: string) => {
         if (id === 'phone') {
@@ -77,6 +81,7 @@ const LoginPage: FC = () => {
                     console.log('login result',result);
                     setMessage('login is successfull');
                     setAlertClass('success');
+                    dispatch(getUserDataByLogin(phone));
                 })
                 .catch((err: any) => {
                     setMessage(errorMessages(ERROR_MESSAGES.WRONG_VERIFICATION_CODE));
