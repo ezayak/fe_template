@@ -10,7 +10,6 @@ import { setLoading, getUserDataByLogin } from './store/user/user.action';
 import { RootState } from './store';
 import { Spinner } from './components/forms/spinner/spinner.component';
 import ProtectedRoute from './components/auth/protected-route.component';
-//import PublicRoute from './components/auth/public-route.component';
 import { AdminPage } from './routes/admin-page/admin-page.component';
 import { AppDispatch } from './store';
 import PublicRoute from './components/auth/public-route.component';

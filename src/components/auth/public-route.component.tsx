@@ -9,11 +9,7 @@ type Props = {
   };
 
 const PublicRoute: FC<Props> = (props) => {
-	const { authenticated } = useSelector((state: RootState) => {
-        console.log('lena-dev', state.user);
-        
-        return state.user;
-    });
+	const { authenticated } = useSelector((state: RootState) => state.user);
 
     return (
         <Fragment>

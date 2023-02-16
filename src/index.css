@@ -56,3 +56,9 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
 }
+
+.btn-plain {
+    border: none;
+    background: none;
+    cursor: pointer;
+}

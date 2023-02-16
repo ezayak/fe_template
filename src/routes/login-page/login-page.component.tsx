@@ -8,6 +8,7 @@ import { ERROR_MESSAGES, errorMessages } from '../../utils/common/error-message.
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store';
 import { getUserDataByLogin } from '../../store/user/user.action';
+import { redirect } from 'react-router-dom';
 
 interface ConfirmationResult {
     confirm: (password: string) => Promise<string>
