@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store';
 import { signout } from '../../store/user/user.action';
-import logo from '../../../public/logo-smart.png';
 
 const HeaderMenu: FC = () => {
     const { authenticated } = useSelector((state: RootState) => state.user);
